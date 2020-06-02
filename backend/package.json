@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
+    "knex:migrate": "knex migrate:latest --knexfile knexfile.ts migrate:latest",
     "dev": "ts-node-dev src/server.ts",
     "build": "webpack -p"
   },
