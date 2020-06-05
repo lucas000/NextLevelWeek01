@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Constants from 'expo-constants';
 import { Feather as Icon} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -8,6 +8,10 @@ import { SvgUri } from 'react-native-svg';
 
 const Points = () => {
   const navigation = useNavigation();
+
+  useEffect(() => {
+
+  }, []);
 
   function handleNavigateBack() {
     navigation.goBack();

@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Feather as Icon} from '@expo/vector-icons';
+import { Feather as Icon, FontAwesome } from '@expo/vector-icons';
+import { RectButton } from 'react-native-gesture-handler';
 
 const Detail = () => {
   const navigation = useNavigation();
@@ -11,7 +12,7 @@ const Detail = () => {
   }
 
   return (
-    <>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <TouchableOpacity onPress={handleNavigateBack}>
             <Icon name="arrow-left" size={20} color="#34cb79" />
@@ -27,7 +28,19 @@ const Detail = () => {
             <Text style={styles.addressContent}>Campos Belos, GO</Text>
           </View>
       </View>
-    </>
+
+      <View style={styles.footer}>
+        <RectButton style={styles.button} onPress={ () => {} }>
+          <FontAwesome name="whatsapp" size={20} color='#FFF' />
+          <Text style={styles.buttonText}>Whatsapp</Text>
+        </RectButton>
+
+        <RectButton style={styles.button} onPress={ () => {} }>
+          <Icon name="main" size={20} color='#FFF' />
+          <Text style={styles.buttonText}>E-mail</Text>
+        </RectButton>
+      </View>
+    </SafeAreaView>
   );
 };
 
@@ -82,6 +95,7 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     borderColor: '#999',
     paddingVertical: 20,
+    paddingBottom: 0,
     paddingHorizontal: 32,
     flexDirection: 'row',
     justifyContent: 'space-between'
