@@ -49,7 +49,7 @@ const Home = () => {
             placeholder={'Digite a cidade'}
             value={city}
             autoCorrect={false}
-            onChangeText={city => setUf(city)}
+            onChangeText={city => setCity(city)}
           />
           <RectButton style={styles.button} onPress={handleNavigateToPoints}>
             <View style={styles.buttonIcon} >
